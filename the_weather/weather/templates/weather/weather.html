@@ -25,14 +25,16 @@
                 <div class="column is-offset-4 is-4">
                     <form method="POST">
                         {% csrf_token %}
+                        {% comment %} <input type='text' name='c'>
+                        <input type='submit' value='Search'> {% endcomment %}
                         <div class="field has-addons">
                             <div class="control is-expanded">
                                 {{ form.name }}
-                            </div>
+                            </div><br>
                             <div class="control">
-                                <button type="submit" class="button is-info">
-                                    Add City
-                                </button>
+                                {% comment %} <button type="submit" class="button is-info">
+                                    Search
+                                </button> {% endcomment %}
                             </div>
                         </div>
                     </form>
@@ -55,9 +57,14 @@
                             <div class="media-content">
                                 <div class="content">
                                     <p>
+
+
+                                        {% comment %} {{ context }} {% endcomment %}
                                         <span class="title">{{ city_weather.city }}</span>
                                         <br>
-                                        <span class="subtitle">{{ city_weather.temperature }}° F</span>
+                                        {% comment %} <span class="subtitle">° F</span> {% endcomment %}
+                                        <span class="subtitle">Temperature :{{ city_weather.temperature }}° F</span><br>
+                                        {% comment %} <span class="subtitle">Minimum :{{ city_weather. }}° F</span><br> {% endcomment %}
                                         <br> {{ city_weather.description }}
                                     </p>
                                 </div>
@@ -70,6 +77,8 @@
         </div>
     </section>
     <footer class="footer">
+    <h4>weather Report has created using <a href='https://home.openweathermap.org' target="_blank"> Accuweather api</a> </h4>
+    <h3>Created By Vaasu<h3>
     </footer>
 </body>
 

@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>weather</title>
+</head>
+<body>
+<h2>Weather Report</h2>
+<form action=./index method='POST'>
+    {% csrf_token %}
+    Enter CityName  <input type='text' name='c'>
+    <input type='submit' value='Search'> 
+</form>
+</body>
+</html>
